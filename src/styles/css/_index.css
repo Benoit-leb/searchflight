@@ -1,0 +1,30 @@
+@import "./flexboxgrid.css";
+
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-to-top {
+  0% {
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slide-to-top {
+  0% {
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px);
+    opacity:0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity:1;
+  }
+}
