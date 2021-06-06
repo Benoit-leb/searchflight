@@ -1,4 +1,4 @@
-import { StyledButton } from "@styles";
+import StyledButton from "./StyledButton";
 import { Ibutton } from "@models";
 
 const Button = (props: Ibutton) => {

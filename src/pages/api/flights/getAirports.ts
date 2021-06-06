@@ -9,9 +9,9 @@ import { Iairport } from "@models";
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const airports = result.data.map((el) => { return { departureAirport: el.departureAirport, arrivalAirport: el.arrivalAirport } });
 
-  const from: Array<Iairport> = [];
+  const from: Iairport[] = [];
 
-  const to: Array<Iairport> = [];
+  const to: Iairport[] = [];
 
   const list = result.included;
 

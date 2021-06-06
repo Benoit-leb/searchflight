@@ -33,7 +33,7 @@ export type Ibutton = {
   label: string;
   type: "button" | "submit" | "reset" | undefined;
   class?: string;
-  onSubmit?: ((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined
+  onSubmit?: (() => void) | undefined
 
 };
 
