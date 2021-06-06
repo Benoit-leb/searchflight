@@ -7,6 +7,7 @@ export type Iinput = {
 export type IdatePicker = {
   label: string
   onChange: (value: Date) => void;
+  value: Date;
 }
 
 export type Iairport = {

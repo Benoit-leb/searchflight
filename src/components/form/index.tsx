@@ -8,7 +8,7 @@ import { Iform } from "@models";
 const Form: FC<Iform> = (props) => {
   const [from, setFrom] = useState();
   const [to, setTo] = useState();
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(new Date);
   const [errorFrom, setErrorFrom] = useState(false);
   const [errorTo, setErrorTo] = useState(false);
 
@@ -46,7 +46,7 @@ const Form: FC<Iform> = (props) => {
                 {errorTo && <div className="row center-xs">Please, write New york</div>}
               </div>
               <div className="col-xs-12 col-sm-4">
-                <InputDatePicker label="Date" onChange={(date: Date) => setDate(date)} />
+                <InputDatePicker label="Date" onChange={setDate} value={date} />
               </div>
             </div>
           </div>
