@@ -1,8 +1,22 @@
+export type Iinput = {
+  onChange: (value: string) => void;
+  label: string;
+  value: string;
+};
+
+export type IdatePicker = {
+  label: string
+  onChange: (value: Date) => void;
+}
+
 export type Iairport = {
   name: string;
   city: string;
-  value: string;
 };
+
+export type Icompany = {
+  name: string
+}
 
 export type Iflight = {
   id: string;
@@ -17,16 +31,17 @@ export type Iflight = {
   arrivalAirport: string;
 }
 
-export type Iform = {
-  from: Iairport[];
-  to: Iairport[];
-  onSubmit: (params: { from: string, to: string }) => void;
-};
+export type Iincluded = {
+  [key: string]: Icompany | Iairport
+}
 
-export type Iselect = {
-  list: Iairport[];
-  onChange: (value: string) => void;
-  label: string;
+export type Idata = {
+  data: Iflight[];
+  included: Iincluded
+}
+
+export type Iform = {
+  onSubmit: (params: { from: string, to: string, date: Date }) => void;
 };
 
 export type Ibutton = {
@@ -36,8 +51,3 @@ export type Ibutton = {
   onSubmit?: (() => void) | undefined
 
 };
-
-
-export type IdatePicker = {
-  label: string
-}

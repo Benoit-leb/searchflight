@@ -17,7 +17,6 @@ const StyledSelect = styled.div`
 	}
 	& .block {
 		background-color: #ffffff;
-		cursor: pointer;
 		width: 100%;
 		height: 5rem;
 		padding: 1rem !important;
@@ -33,8 +32,7 @@ const StyledSelect = styled.div`
 			height: 2rem;
 		}
 	}
-	& select {
-		cursor: pointer;
+	& input {
 		width: calc(100% - 4rem);
 		height: 100%;
 		border: none;

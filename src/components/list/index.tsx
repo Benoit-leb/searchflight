@@ -1,12 +1,13 @@
-import { Iflight } from "@models";
+import { Idata } from "@models";
+import { FC } from "react";
 import FlightItem from "@components/flightItem";
 
-const List = (props: { data: { list: Iflight[] | undefined, included: any } }) => {
+const List: FC<{ flights: Idata }> = (props) => {
   return (
     <div>
-      {(props.data && props.data.list) && props.data.list.map((el, idx) => {
+      {(props && props.flights) && props.flights.data.map((el, idx) => {
         return (
-          <FlightItem key={`${el.flightNumber}-${idx}`} item={el} included={props.data.included} />
+          <FlightItem key={`${el.flightNumber}-${idx}`} item={el} included={props.flights.included} />
         );
       })}
     </div>

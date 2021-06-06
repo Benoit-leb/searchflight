@@ -1,8 +1,10 @@
+import { FC } from "react";
 import { Iflight } from "@models";
+import { Iincluded } from "@models";
 import StyledflightItem from "./StyledflightItem";
 import Button from "@components/button/button";
 
-const FlightItem = (props: { item: Iflight, included: any }) => {
+const FlightItem: FC<{ item: Iflight, included: Iincluded }> = (props) => {
 
   const { item } = props;
   return (

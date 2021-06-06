@@ -11,7 +11,7 @@ type Props = PageProps<typeof getServerSideProps>;
 
 const Index: FC<Props> = (props) => {
 
-	const [flights, setFlights] = useState();
+	const [results, setResults] = useState();
 
 	/**
 	 * 
@@ -19,16 +19,16 @@ const Index: FC<Props> = (props) => {
 	 */
 	const onSubmit = async (params: { from: string, to: string }) => {
 
-		const result = (await axios.post("/api/flights/find/flight", params)).data.result;
+		const results = (await axios.post("/api/flights/find/flight", params)).data.results;
 
-		setFlights(result);
+		setResults(results);
 
 	};
 
 	return (
 		<Fragment>
-			<Form to={props.data.to} from={props.data.from} onSubmit={onSubmit}></Form>
-			<List data={flights} />
+			<Form onSubmit={onSubmit}></Form>
+			<List flights={results} />
 		</Fragment>
 	);
 };
