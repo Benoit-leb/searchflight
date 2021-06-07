@@ -19,14 +19,14 @@ export type Ibutton = {
 };
 
 
-export type Iairport = {
-  name: string;
-  city: string;
-};
+// export type Iairport = {
+//   name: string;
+//   city: string;
+// };
 
-export type Icompany = {
-  name: string
-}
+// export type Icompany = {
+//   name: string
+// }
 
 export type Iflight = {
   id: string;
@@ -42,7 +42,7 @@ export type Iflight = {
 }
 
 export type Iincluded = {
-  [key: string]: Icompany | Iairport
+  [key: string]: any
 }
 
 export type Idata = {

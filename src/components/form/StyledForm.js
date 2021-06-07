@@ -11,7 +11,7 @@ const StyledForm = styled.div`
 	border: none;
 	border-radius: 8px;
 	@media (min-width: ${$.sm}) {
-		padding: 8rem 5rem 10rem;
+		padding: 8rem 5rem;
 	}
 	&:focus {
 		outline: 0;

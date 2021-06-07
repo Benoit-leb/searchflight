@@ -8,6 +8,7 @@ const FlightItem: FC<{ item: Iflight, included: Iincluded }> = (props) => {
 
   const { item } = props;
   const { included } = props;
+
   return (
     <StyledflightItem>
       <div className="row around-xs top-xs">
@@ -26,7 +27,7 @@ const FlightItem: FC<{ item: Iflight, included: Iincluded }> = (props) => {
             <div>{`${included[item.arrivalAirport].city} - ${included[item.arrivalAirport].name}`}</div>
           </div>
         </div>
-        <div className="col-xs-12 col-sm-3 last-xs start-xs">{parseInt(item.duration / 60)}h {item.duration % 60}min</div>
+        <div className="col-xs-12 col-sm-3 last-xs start-xs">{(item.duration / 60).toFixed(0)}h {item.duration % 60}min</div>
         <div className="col-xs-4 col-sm-3 last-sm">
           <div className="box">
             <div className="row between-sm center-xs">
