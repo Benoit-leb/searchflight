@@ -19,12 +19,12 @@ const Form: FC<Iform> = (props) => {
     e.stopPropagation();
 
     // check if city is ok
-    if (!from || from.toLowerCase().replaceAll(" ", "").replaceAll("-", "").trim() !== "paris") {
+    if (!from || from.toLowerCase().replaceAll(new RegExp(/(-)|(\s)/g), "").trim() !== "paris") {
       setErrorFrom(true);
       return;
     }
 
-    if (!to || to.toLowerCase().replaceAll(" ", "").replaceAll("-", "").trim() !== "newyork") {
+    if (!to || to.toLowerCase().replaceAll(new RegExp(/(-)|(\s)/g), "").trim() !== "newyork") {
       setErrorTo(true);
       return;
     }
@@ -38,15 +38,15 @@ const Form: FC<Iform> = (props) => {
           <div className="col-xs-12">
             <div className="row start-xs">
               <div className="col-xs-12 col-sm-4">
-                <Input onChange={setFrom} value={from} label="From"></Input>
+                <Input onChange={setFrom} value={from} label="From" id="from"></Input>
                 {errorFrom && <div className="row center-xs">Please, write Paris</div>}
               </div>
               <div className="col-xs-12 col-sm-4">
-                <Input onChange={setTo} value={to} label="To"></Input>
+                <Input onChange={setTo} value={to} label="To" id="to"></Input>
                 {errorTo && <div className="row center-xs">Please, write New york</div>}
               </div>
               <div className="col-xs-12 col-sm-4">
-                <InputDatePicker label="Date" onChange={setDate} value={date} />
+                <InputDatePicker label="Date" onChange={setDate} value={date} id="date" />
               </div>
             </div>
           </div>

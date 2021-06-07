@@ -7,11 +7,11 @@ const Select: FC<Iinput> = (props) => {
   return (
     <StyledInput>
       <div>
-        <label>{props.label}</label>
+        <label htmlFor={props.id}>{props.label}</label>
       </div>
       <div className="block row around-xs middle-xs">
         <PlaneSvg />
-        <input onChange={(e) => {
+        <input id={props.id} onChange={(e) => {
           props.onChange(e.target.value)
         }} value={props.value ? props.value : ""} />
       </div>

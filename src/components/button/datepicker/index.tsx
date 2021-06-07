@@ -10,11 +10,11 @@ const inputDatePicker: FC<IdatePicker> = (props) => {
   return (
     <StyledDatePicker>
       <div>
-        <label>{props.label}</label>
+        <label htmlFor={props.id}>{props.label}</label>
       </div>
       <div className="block row around-xs middle-xs">
         <AgendaSvg />
-        <DatePicker selected={props.value} onChange={(date: Date) => {
+        <DatePicker id={props.id} selected={props.value} onChange={(date: Date) => {
           props.onChange(date)
         }} />
       </div>

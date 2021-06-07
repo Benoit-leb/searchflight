@@ -2,12 +2,14 @@ export type Iinput = {
   onChange: (value: string) => void;
   label: string;
   value: string;
+  id: string;
 };
 
 export type IdatePicker = {
   label: string;
   onChange: (value: Date) => void;
   value: Date;
+  id: string;
 }
 
 export type Ibutton = {
@@ -17,16 +19,6 @@ export type Ibutton = {
   onSubmit?: (() => void) | undefined;
 
 };
-
-
-// export type Iairport = {
-//   name: string;
-//   city: string;
-// };
-
-// export type Icompany = {
-//   name: string
-// }
 
 export type Iflight = {
   id: string;
