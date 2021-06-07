@@ -5,10 +5,19 @@ export type Iinput = {
 };
 
 export type IdatePicker = {
-  label: string
+  label: string;
   onChange: (value: Date) => void;
   value: Date;
 }
+
+export type Ibutton = {
+  label: string;
+  type: "button" | "submit" | "reset" | undefined;
+  class?: string;
+  onSubmit?: (() => void) | undefined;
+
+};
+
 
 export type Iairport = {
   name: string;
@@ -43,12 +52,4 @@ export type Idata = {
 
 export type Iform = {
   onSubmit: (params: { from: string, to: string, date: Date }) => void;
-};
-
-export type Ibutton = {
-  label: string;
-  type: "button" | "submit" | "reset" | undefined;
-  class?: string;
-  onSubmit?: (() => void) | undefined
-
 };

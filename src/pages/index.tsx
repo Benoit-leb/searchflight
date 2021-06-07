@@ -1,9 +1,10 @@
 import { PageProps } from "@core/types";
 import { FC, useState, Fragment } from "react";
+import { Iflight } from "@models";
 import axios from "axios";
 import getProps from "@props/index";
 import Form from "@components/form";
-import List from "@components/list";
+import FlightItem from "@components/flightItem";
 
 export const getServerSideProps = getProps;
 
@@ -17,7 +18,7 @@ const Index: FC<Props> = (props) => {
 	 * 
 	 * callback submit from form component
 	 */
-	const onSubmit = async (params: { from: string, to: string }) => {
+	const onSubmit = async (params: { from: string, to: string, date: Date }) => {
 
 		const results = (await axios.post("/api/flights/find/flight", params)).data.results;
 
@@ -28,7 +29,13 @@ const Index: FC<Props> = (props) => {
 	return (
 		<Fragment>
 			<Form onSubmit={onSubmit}></Form>
-			<List flights={results} />
+			<div>
+				{results && results.data.map((el: Iflight, idx: number) => {
+					return (
+						<FlightItem key={`${el.flightNumber}-${idx}`} item={el} included={results.included} />
+					);
+				})}
+			</div>
 		</Fragment>
 	);
 };
